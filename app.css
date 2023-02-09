@@ -1,0 +1,63 @@
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+
+
+.container{
+  max-width: 1250px;
+  margin: 0px auto;
+  box-sizing: border-box;
+  font-family: 'Arial';
+  color: #282828;
+}
+
+.App {
+padding-top: 220px;
+background-image: linear-gradient(120deg, #fdfbfb 0%, #ebedee 100%);
+}
+.heading{
+font-size: 50px;
+font-weight: 300;
+line-height: 120%;
+margin: 0;
+}
+.heading p {
+  margin-top: 16px;
+  font-size: 20px;
+}
+.contain{
+height: 300px;
+width: 800px;
+display: flex;
+justify-content: space-around;
+align-items: center;
+}
+input{
+padding-left: 5px;
+font-size: 20px;
+height: 36px;
+}
+.middle,.right{
+width: 120px;
+}
+.switch{
+padding: 5px;
+cursor: pointer;
+}
+.result{
+box-sizing: border-box;
+width: 800px;
+padding-left: 30px;
+}
+button{
+width: 100px;
+height: 30px;
+font-weight: bold;
+font-size: 20px;
+background-color: #11B3FE;
+cursor: pointer;
+}
+h3, button, .switch{
+color: #11B3FE;
+}
+p{
+font-size: 30px;
+}
