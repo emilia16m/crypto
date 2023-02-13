@@ -8,7 +8,7 @@
     border: 1px solid #E3EBEF;
     border-radius: 5px;
 }
-.activ_crypto {
+.activ_crypto_menu {
     border-radius: 5px 5px 0 0;
     border: 1px solid #C1D9E6;
     border-bottom: 1px solid#E3EBEF;
@@ -18,7 +18,9 @@
     justify-content: space-between;
     align-items: center;
 }
-
+.activ_menu {
+    display: none;
+}
 .dropdown {
     display: flex;
     align-items: center;
@@ -29,6 +31,7 @@
     margin-left: 36px;
     align-items: center;
 }
+
 .crypto_info .icon {
     margin-right: 14.39px;
     width: 15px;
