@@ -6,7 +6,7 @@ import { HiSwitchHorizontal } from 'react-icons/hi';
 import './App.css';
 import ReactDropdown from 'react-dropdown';
 import Convert from './components/convert';
-import Prob from './components/prob';
+import Left from './components/left';
 
 function App() {
 
@@ -16,7 +16,7 @@ return (
     
   <div className='exchange'>
       <div className='container'>
-        <Prob></Prob>
+        <Left />
       </div>
   </div> 
 
