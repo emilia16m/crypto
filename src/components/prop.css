@@ -1,0 +1,91 @@
+.prob_left {
+    box-sizing: border-box;
+    display: grid;
+    grid-template-columns: 290px 150px;
+    width: 440px;
+    height: 50px;
+    background-color: #F6F7F8;
+    border: 1px solid #E3EBEF;
+    border-radius: 5px;
+}
+.activ_crypto {
+    border-radius: 5px 5px 0 0;
+    border: 1px solid #C1D9E6;
+    border-bottom: 1px solid#E3EBEF;
+}
+.input_form{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.dropdown {
+    display: flex;
+    align-items: center;
+}
+.dropdown .crypto_info {
+    display: flex;
+    margin-right: 33px;
+    margin-left: 36px;
+    align-items: center;
+}
+.crypto_info .icon {
+    margin-right: 14.39px;
+    width: 15px;
+    height: 20px;
+}
+
+.icon img {
+    align-items: center;
+    width: 15px;
+    height: 20px;
+}
+
+.drop {
+    background-color: #F6F7F8;
+    border: none;
+    width: 10px;
+    cursor: pointer;
+}
+
+
+
+.crypto_menu {
+    display: none;;
+    box-sizing: border-box;
+    position: absolute;
+    height: 144px;
+    width: 440px;
+    border: 1px solid #C1D9E6;
+    border-radius: 0 0 5px 5px;
+    border-top: none;
+    background-color: #F6F7F8;
+    margin-top: 49px;
+    padding: 12px 0;
+    margin-left: -1px;
+    overflow: scroll;
+}
+
+.crypto_menu ul {
+    list-style: none ;
+    padding-left: 20px;
+    margin: 0;
+}
+.crypto_menu ul li{
+    display: flex;
+    justify-content: left;
+    margin-bottom: 25px;
+    align-items: center;
+    cursor: pointer;
+}
+.crypto_menu ul li .icon {
+    width: 15px;
+    height: 20px;
+}
+.crypto_menu ul li div {
+    margin-right: 15px;
+}
+
+.show {
+    display: block;
+}
