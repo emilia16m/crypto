@@ -1,75 +1,57 @@
 import React, { useEffect, useState } from "react";
-import "./prob.css"
+import "./left.css"
 import Axios from 'axios';
+import { APP_KEY } from "../key";
 const Crypto = (props) =>{
-    
-    const src ='https://api.changenow.io/v1/currencies?active=true'
 
-    const [names, setName] = useState([]);
-    const [imges, setImg] = useState([]);
-    const [tickers, setTicker] = useState([])
+    const crytoChange = () => {
+        document.getElementById("myDropdown").classList.remove("show");
+        
+    }
+
+
+    const api_key = APP_KEY
+    const src =`https://api.changenow.io/v1/currencies?active=true${api_key}`
+    const [dates, setDate] = useState([])
     useEffect(() => {
         Axios.get(src)
     .then((data) => {
-        console.log(data.data)
-        setName(data.data);
-        setImg(data.data);
-        setTicker(data.data);
+        setDate(data.data)
         })
     }, []);
-    
-    return(
-        <li >
-            <div  className="icon">
-                    {imges.map(image =>  {
-                        return(
-                            <img src={imges.image} alt='crp'/>
-                    )})}
-            </div>
-            <div className="crypto_tic">{tickers.map(tickers =>  {
-                return(
-                <p>{tickers.ticker}</p>
-            )})}</div>
-
-
-            <div className="crypto_name">
-            {names.map(names =>  {
-                return(
-                <p>{names.name}</p>
-            )})}
-            </div>
-        </li>
-                
-    )
-}
-
-// let cryptoData =[
-//   {ticker: "btc", name: "Bitcoin",  image: "https://changenow.io/images/coins/btc.svg"},
-//  {ticker: "eth", name: "Ethereum", image: "https://changenow.io/images/coins/eth.svg"},
-//    {ticker: "xrp", name: "Ripple",  image: "https://changenow.io/images/coins/xrp.svg"},
-//    {ticker: "ltc", name: "Litecoin",  image: "https://changenow.io/images/coins/ltc.svg"}
-//]
+    let crypto_item = dates.map( item => {
+        return(
+            <li onClick={crytoChange}>
+                <div  className="icon"> <img src={item.image} alt='icn'/> </div>
+                <div className="crypto_tic">{item.ticker}</div>
+                <div className="crypto_name"> {item.name}</div>
+            </li>
+)})
+        return (
+        <ul > 
+          {crypto_item}
+        </ul>           
+)}
 
 
 
 
-
-
-const Prob = () => {
+const Left = () => {
 
 
     const handleClick = () => {
-        // 👇️ toggle class on click
         document.getElementById("myDropdown").classList.toggle("show");
-        document.getElementById("leftActiv").classList.toggle("activ_crypto");
+        document.getElementById("leftActiv").classList.toggle("activ_crypto_menu");
+        document.getElementById("hrVert").classList.toggle("hr_activ_menu");
+        document.getElementById("hrVert").classList.toggle("activ_menu");
       };
 
     return(
         <div className="prob_wrapper">
             <div className="prob_left" id="leftActiv">
                 <div className="input_form">
-                    <input placeholder="0"/>
-                    <svg width="1" height="30" viewBox="0 0 1 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <input placeholder=""/>
+                    <svg id='hrVert' width="1" height="30" viewBox="0 0 1 30" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <line x1="0.5" y1="-2.18557e-08" x2="0.500001" y2="30" stroke="#E3EBEF"/>
                     </svg>
 
@@ -89,9 +71,9 @@ const Prob = () => {
                 
                 </div>
                 <div id="myDropdown" className="crypto_menu">
-                    <ul>
+                    
                         <Crypto/>
-                    </ul>
+                    
                 </div>
 
             </div>
@@ -101,4 +83,4 @@ const Prob = () => {
 }
 
 
-export default Prob;
+export default Left;
