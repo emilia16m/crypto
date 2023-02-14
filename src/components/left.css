@@ -18,14 +18,12 @@
     justify-content: space-between;
     align-items: center;
 }
-.activ_menu {
-    display: none;
-}
+
 .dropdown {
     display: flex;
     align-items: center;
 }
-.dropdown .crypto_info {
+.crypto_info {
     display: flex;
     margin-right: 33px;
     margin-left: 36px;
@@ -85,6 +83,9 @@
     width: 15px;
     height: 20px;
 }
+.crypto_menu ul li .icon  img{
+    filter: invert(20%) sepia(79%) saturate(2476%) hue-rotate(160deg) brightness(118%) contrast(119%);
+}
 .crypto_menu ul li div {
     margin-right: 15px;
 }
@@ -92,3 +93,14 @@
 .show {
     display: block;
 }
+.activ_menu {
+    display: none;
+}
+
+.button_change{
+    margin-left: 122px;
+}
+.button_change img {
+    width: 10px;
+}
+
