@@ -7,9 +7,10 @@ import { APP_KEY } from "../key";
 
 
 const Crypto = (props) =>{
-    document.querySelectorAll('ul li').forEach((li, index) => {
+    document.querySelectorAll('ul li').forEach((li, index) => { // записывает индекс эмента массива , на который кликнули, в переменную 
         li.addEventListener('click', () => {
            let crypto_activ = index;
+           console.log(crypto_activ)
         });
      });
 
@@ -24,7 +25,7 @@ const Crypto = (props) =>{
 }, []);
     const crypto_item = dates.map( item => {
         return(
-            <li className="item" onClick={crytoChoice}>
+            <li className="item">
                 <div  className="icon"> <img src={item.image} alt='icn'/> </div>
                 <div className="crypto_tic">{item.ticker}</div>
                 <div className="crypto_name"> {item.name}</div>
@@ -41,7 +42,6 @@ const Crypto = (props) =>{
 
 
 const Left = (props) => {
-
 
     const handleClick = () => {
         document.getElementById("myDropdown").classList.toggle("show");
