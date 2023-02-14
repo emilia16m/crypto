@@ -7,21 +7,31 @@ import { APP_KEY } from "../key";
 
 
 const Crypto = (props) =>{
-    document.querySelectorAll('ul li').forEach((li, index) => { // записывает индекс эмента массива , на который кликнули, в переменную 
+
+   
+    let valueTicker; //создаю их пустыми здесь, что бы потом использовать глобально, но придумаю потом как перетащить их и в компоненту Left
+    let valueImg;
+    let valueName;
+
+    document.querySelectorAll('li').forEach((li, index) => { // записывает индекс эмента массива , на который кликнули, в переменную 
         li.addEventListener('click', () => {
-           let crypto_activ = index;
-           console.log(crypto_activ)
-        });
-     });
-
-
+        let indexNum = Number(index);
+        console.log(indexNum)
+        let valueTicker = crypto_item[indexNum].props.children[1].props.children    //достает значение ticker элемента, на который кликнули
+        let valueName = crypto_item[indexNum].props.children[2].props.children[1]
+        let valueImg = crypto_item[indexNum].props.children[0].props.children[1].props.src
+});});
+    console.log(valueImg, valueName, valueTicker )
     const api_key = APP_KEY
     const src =`https://api.changenow.io/v1/currencies?active=true${api_key}`
     const [dates, setDate] = useState([])
+    const [from, setFrom] = useState("name");
     useEffect(() => {
         Axios.get(src)
     .then((data) => {
-        setDate(data.data)})
+        setDate(data.data)
+        setFrom(data.data)
+})
 }, []);
     const crypto_item = dates.map( item => {
         return(
@@ -34,7 +44,7 @@ const Crypto = (props) =>{
         return (
         <ul className="cont"> 
           {crypto_item}
-        </ul>           
+        </ul>     
 )
 
 }
@@ -67,7 +77,7 @@ const Left = (props) => {
                 <div className="dropdown">
                     <div className="crypto_info" id="activCrypto" >
                         <div className="icon"> <img src="https://changenow.io/images/coins/btc.svg" alt="btc" /></div>
-                        <div className="crypto_tic">1</div>
+                        <div className="crypto_tic" >1</div>
                     </div>
                     <button id='buttonChange' className="drop" onClick={handleClick}>
                         <svg width="10" height="6" viewBox="0 0 10 6"  xmlns="http://www.w3.org/2000/svg">
