@@ -10,7 +10,7 @@ const Crypto = (props) =>{
 
    
 
-    const choiseCrypto = document.querySelectorAll('li').forEach((li, index) => { // записывает индекс эмента массива , на который кликнули, в переменную 
+    document.querySelectorAll('li').forEach((li, index) => { // записывает индекс эмента массива , на который кликнули, в переменную 
         li.addEventListener('click', () => {
         let valueTicker = crypto_item[index].props.children[1].props.children    //достает значение ticker элемента, на который кликнули
         let valueName = crypto_item[index].props.children[2].props.children[1]
