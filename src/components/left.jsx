@@ -9,14 +9,19 @@ import { APP_KEY } from "../key";
 const Crypto = (props) =>{
 
    
-
+   
     document.querySelectorAll('li').forEach((li, index) => { // записывает индекс эмента массива , на который кликнули, в переменную 
-        li.addEventListener('click', () => {
+        li.addEventListener('click', () => { 
         let valueTicker = crypto_item[index].props.children[1].props.children    //достает значение ticker элемента, на который кликнули
-        let valueName = crypto_item[index].props.children[2].props.children[1]
+       // let valueName = crypto_item[index].props.children[2].props.children[1]
         let valueImg = crypto_item[index].props.children[0].props.children[1].props.src
-        console.log(valueImg, valueName, valueTicker)
-});});
+        let tickerChoise = {
+            img: valueImg,
+            ticker: valueTicker
+        } 
+        console.log (tickerChoise);
+}); 
+}); 
     const api_key = APP_KEY
     const src =`https://api.changenow.io/v1/currencies?active=true${api_key}`
     const [dates, setDate] = useState([])
