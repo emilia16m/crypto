@@ -3,25 +3,25 @@ import "./left.css"
 import Axios from 'axios';
 import { APP_KEY } from "../key";
 
-
-
+const Activ = (props) => {
+  
+   
+    return (
+        <p >{a}</p>
+    
+    )}
+    //let tickerChoise = {
+    //img: valueImg,
+    //ticker: valueTicker
+//} 
 
 const Crypto = (props) =>{
 
    
-   
     document.querySelectorAll('li').forEach((li, index) => { // записывает индекс эмента массива , на который кликнули, в переменную 
-        li.addEventListener('click', () => { 
-        let valueTicker = crypto_item[index].props.children[1].props.children    //достает значение ticker элемента, на который кликнули
-       // let valueName = crypto_item[index].props.children[2].props.children[1]
-        let valueImg = crypto_item[index].props.children[0].props.children[1].props.src
-        let tickerChoise = {
-            img: valueImg,
-            ticker: valueTicker
-        } 
-        console.log (tickerChoise);
-}); 
-}); 
+        li.addEventListener('click', () =>  <Activ a= {1}valueTicker={crypto_item[index].props.children[1].props.children} valueImg={crypto_item[index].props.children[0].props.children[1].props.src}/>)
+});
+ 
     const api_key = APP_KEY
     const src =`https://api.changenow.io/v1/currencies?active=true${api_key}`
     const [dates, setDate] = useState([])
@@ -43,9 +43,7 @@ const Crypto = (props) =>{
         <ul className="cont"> 
           {crypto_item}
         </ul>     
-)
-
-}
+)}
 
 
 
@@ -75,7 +73,7 @@ const Left = (props) => {
                 <div className="dropdown">
                     <div className="crypto_info" id="activCrypto" >
                         <div className="icon"> <img src="https://changenow.io/images/coins/btc.svg" alt="btc" /></div>
-                        <div className="crypto_tic" >1</div>
+                        <div className="crypto_tic" > <Activ></Activ></div>
                     </div>
                     <button id='buttonChange' className="drop" onClick={handleClick}>
                         <svg width="10" height="6" viewBox="0 0 10 6"  xmlns="http://www.w3.org/2000/svg">
@@ -90,7 +88,7 @@ const Left = (props) => {
                 </div>
                 
             </div>
-            
+           
         </div>
     )
 }
