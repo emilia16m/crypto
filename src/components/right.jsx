@@ -9,8 +9,8 @@ import { APP_KEY } from "../key";
 const Cryptos = (props) =>{
     document.querySelectorAll('li').forEach((li, index) => { // записывает индекс эмента массива , на который кликнули, в переменную 
         li.addEventListener('click', () => {
-        let valueTicker = crypto_item[index].props.children[1].props.children  
-        let valueImg = crypto_item[index].props.children[0].props.children[1].props.src
+        let valueTicker = crypto_items[index].props.children[1].props.children  
+        let valueImg = crypto_items[index].props.children[0].props.children[1].props.src
         document.getElementById("input_copy").value = valueTicker;
         console.log(valueImg, valueTicker)
 });});
@@ -23,21 +23,20 @@ const Cryptos = (props) =>{
         Axios.get(src)
     .then((data) => {
         setDate(data.data)
-        console.log(data)
 })
 }, []);
 
-    const crypto_item = dates.map( item => {
+    const crypto_items = dates.map( item => {
         return(
-            <li id="element" className="item">
+            <li  className="item">
                 <div  className="icon"> <img src={item.image} alt='icn'/> </div>
                 <div id="tickerCrypto" className="crypto_tic">{item.ticker}</div>
                 <div className="crypto_name"> {item.name}</div>
             </li>
 )})
         return (
-                <ul className="cont"> 
-                    {crypto_item}
+                <ul className="cont two_ul"> 
+                    {crypto_items}
                 </ul> 
              
     
