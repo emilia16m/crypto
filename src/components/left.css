@@ -1,3 +1,8 @@
+.prob_wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
 .prob_left {
     box-sizing: border-box;
     display: grid;
@@ -43,6 +48,8 @@
 }
 
 .drop {
+    position: absolute;
+    margin-left: 120px;
     background-color: #F6F7F8;
     border: none;
     width: 10px;
@@ -50,9 +57,13 @@
 }
 
 
+input {
+   width: 40px;
+   padding: 0;
+}
 
 .crypto_menu {
-    display: none;;
+    display: none;
     box-sizing: border-box;
     position: absolute;
     height: 144px;
@@ -64,9 +75,14 @@
     margin-top: 49px;
     padding: 12px 0;
     margin-left: -1px;
-    overflow: scroll;
+    overflow: auto;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
 }
-
+.crypto_menu::-webkit-scrollbar {
+    width: 0;
+    height: 0;
+}
 .crypto_menu ul {
     list-style: none ;
     padding-left: 20px;
@@ -89,19 +105,21 @@
 .crypto_menu ul li div {
     margin-right: 15px;
 }
-
+.crypto_tic {
+    text-transform: uppercase;
+    line-height: 23px;
+}
+.crypto_menu ul li .crypto_name {
+    color: #80A2B6;
+}
 .show {
     display: block;
-}
-.activ_menu {
-    display: none;
 }
 
 .button_change{
     margin-left: 122px;
 }
 .button_change img {
-    
     width: 10px;
 }
 
