@@ -2,8 +2,8 @@ import React, { useEffect, useState } from "react";
 import "./wrapper.css"
 import Axios from 'axios';
 import { APP_KEY } from "../key";
-import Left from "./left";
-import Right from "./right";
+import Left from "./left/left";
+import Right from "./right/right";
 
 const Wrapper = () => {
     const [result, setResult] = useState([])
@@ -11,7 +11,7 @@ const Wrapper = () => {
     const [img, setImg] = useState("https://changenow.io/images/coins/btc.svg")
     const [to, setTo] = useState("eth");
     const [imgto, setImgto] = useState("https://content-api.changenow.io/uploads/eth_f4ebb54ec0.svg")
-    const [input, setInput] = useState();
+    const [input, setInput] = useState(0.1);
     const [min, setMin] = useState(0);
     const api_key = APP_KEY
 
@@ -40,7 +40,7 @@ const Wrapper = () => {
 
     return(
         <div className="prob_wrapper">
-            <Left api_key={api_key} setFrom={setFrom} from={from} setInput={setInput} input={input} setImg={setImg} img={img}/>
+            <Left setResult={setResult} min={min} api_key={api_key} setFrom={setFrom} from={from} setInput={setInput} input={input} setImg={setImg} img={img}/>
 
             <div className="switch" onClick={flip}>
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
