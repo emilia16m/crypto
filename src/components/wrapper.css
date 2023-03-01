@@ -15,7 +15,16 @@
     border: 1px solid #E3EBEF;
     border-radius: 5px;
 }
+.prob_left:hover {
+    background-color: #F6F7F8;
+}
 .activ_crypto_menu {
+    box-sizing: border-box;
+    display: grid;
+    grid-template-columns: 290px 150px;
+    width: 440px;
+    height: 50px;
+    background-color: #F6F7F8;
     border-radius: 5px 5px 0 0;
     border: 1px solid #C1D9E6;
     border-bottom: none;
@@ -67,7 +76,6 @@
 
 
 .crypto_menu {
-    display: none;
     box-sizing: border-box;
     position: absolute;
     height: 144px;
@@ -128,4 +136,8 @@
 
 .switch {
     cursor: pointer;
+}
+
+.error {
+    position: absolute;
 }
