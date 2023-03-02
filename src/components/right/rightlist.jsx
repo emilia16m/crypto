@@ -35,3 +35,4 @@ const CryptoRight = ({ setTo, setImgto, api_key }) => {
 }
 
 export default CryptoRight;
+
